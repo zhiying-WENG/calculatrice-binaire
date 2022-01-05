@@ -9,16 +9,19 @@ for (const btn of btns){
         btn.addEventListener("click",add);
     }
 }
-function add(){
-    res.innerHTML+=this.value;
-}
+
 function clear(){
     res.innerHTML="";
 }
 function eql(){
     let expr = res.innerHTML;
+    // Replace tous les numérique base 2 avec base 10
     expr = expr.replace(/(\d+)/g, function(match) {
         return parseInt(match, 2);
     })
-    res.innerHTML = eval(expr).toString(2);
+    // eval base 10 et convert à base 2
+    res.innerHTML = parseInt(eval(expr)).toString(2);
+}
+function add(){
+    res.innerHTML+=this.value;
 }
