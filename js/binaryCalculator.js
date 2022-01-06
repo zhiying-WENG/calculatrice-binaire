@@ -1,5 +1,5 @@
-let res=document.getElementById("res");
-let btns=document.querySelectorAll("button");
+const res=document.getElementById("res");
+const btns=document.querySelectorAll("button");
 for (const btn of btns){
     if (btn.id=="btnClr"){
         btn.addEventListener("click",clear);
